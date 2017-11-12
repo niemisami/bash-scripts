@@ -1,0 +1,10 @@
+.*.swp
+
+# Used for storing user and system informations
+# which should not be under version control
+credentials.txt
+
+# Logs from the scripts 
+logs/*
+script.log
+error.log
