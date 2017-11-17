@@ -17,5 +17,10 @@ apt-get install -y libssl-dev libsqlite3-dev
 apt-get install -y curl openssl sqlite3
 
 
+# Node Version Manager	
+# Installation following https://github.com/creationix/nvm
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
+
+
 # Prompt OK if last command was successful
 if (( $? )) ; then echo failed ; else echo OK; fi
