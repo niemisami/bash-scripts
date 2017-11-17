@@ -11,7 +11,7 @@ echo 'Will install everything for you in the near future (not a promise..)'
 
 # Basic packages
 apt-get install -y openssh-server screen unzip 
-apt-get install -y build-essential libssl-dev ufw
+apt-get install -y build-essential libssl-dev ufw libffi-dev
 apt-get install -y python-software-properties g++ make software-properties-common
 apt-get install -y libssl-dev libsqlite3-dev
 apt-get install -y curl openssl sqlite3
@@ -23,6 +23,10 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | b
 
 # PostgreSQL
 apt-get install -y postgresql postgresql-contrib
+
+# Python3 and pip
+apt-get install -y python3-pip
+
 
 # Prompt OK if last command was successful
 if (( $? )) ; then echo failed ; else echo OK; fi
