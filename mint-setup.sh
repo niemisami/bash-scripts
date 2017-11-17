@@ -26,7 +26,7 @@ apt-get install -y postgresql postgresql-contrib
 
 # Python3 and pip
 apt-get install -y python3-pip
+apt-get install -y python3-venv
 
-
-# Prompt OK if last command was successful
+# Display OK if last command was successful
 if (( $? )) ; then echo failed ; else echo OK; fi
