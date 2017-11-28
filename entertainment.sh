@@ -14,3 +14,9 @@ sudo apt-get update
 
 # 4. Install Spotify
 sudo apt-get install spotify-client
+
+# Dropbox
+# It is also possible to load Dropbox on server and operate it with python script. More detailed guide here: https://www.dropbox.com/install-linux
+
+cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+~/.dropbox-dist/dropboxd
