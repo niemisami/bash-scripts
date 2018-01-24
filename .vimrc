@@ -31,7 +31,7 @@ set wildmenu
 set hlsearch
 " disable highlight by pressing space. You can continue search by pressing n
 " or shift+n 
-:nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 " Leave last command on the bottom of the screen
 set showcmd
@@ -85,3 +85,6 @@ nnoremap <C -t> :tabnew<CR>
 nnoremap <C -S-tab> <ESC>:tabprevious<CR>i
 nnoremap <C -tab> <ESC>:tabnext<CR>i
 nnoremap <C -t> <ESC>:tabnew<CR>
+
+" Map \s to replace each word under cursor
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
