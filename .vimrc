@@ -95,6 +95,9 @@ let g:netrw_liststyle = 3
 " Map Y to copy row content from cursor to EOL
 map Y y$
 
+" Use system clipboard by default 
+set clipboard=unnamed 
+
 " Open and swithc between tabs
 nnoremap <C -S-tab> :tabprevious<CR>
 nnoremap <C -tab> :tabnext<CR>
@@ -118,7 +121,8 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
+" Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 
@@ -128,6 +132,7 @@ call plug#end()
 let g:airline_theme = 'minimalist'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#branch#enabled = 1
 if !exists('g:airline_symbols')
       let g:airline_symbols = {}
   endif
