@@ -6,7 +6,7 @@ apt-get update
 
 # Vim
 apt-get vim
-
+apt-get install fonts-powerline # fonts for vim-airline (powerline)
 # Visual Studio Code
 
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
