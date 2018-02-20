@@ -88,3 +88,16 @@ nnoremap <C -t> <ESC>:tabnew<CR>
 
 " Map \s to replace each word under cursor
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+
+
+" Install vim-plug plugin manager if one doesn't exist
+if empty(glob('~/.vim/autoload/plug.vim'))
+      silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+          \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    endif
+
+" Vim-plug installed plugins
+call plug#begin('~/.vim/plugged')
+
+call plug#end()
