@@ -5,7 +5,7 @@ set -e
 apt-get update
 
 # Vim
-apt-get vim
+apt-get vim-gtk # gtk version because it supports clipboard 
 apt-get install fonts-powerline # fonts for vim-airline (powerline)
 # Visual Studio Code
 
