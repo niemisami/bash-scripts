@@ -2,6 +2,11 @@
 
 set -e
 
+apt-get update
+
+# Vim
+apt-get vim-gtk # gtk version because it supports clipboard 
+apt-get install fonts-powerline # fonts for vim-airline (powerline)
 # Visual Studio Code
 
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
@@ -11,5 +16,4 @@ sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable
 # SQLite browser
 
 
-apt-get update
 apt-get install code

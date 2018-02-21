@@ -16,9 +16,11 @@ filetype indent on
 
 syntax on
 
+" Upgrade color space
+set t_Co=256
 
 " Hide swap files. Using :e doesn't require to save previous file
-" https://medium.com/usevim/vim-101-set-hidden-f78800142855
+" https://medium.com/usevim/aim-101-set-hidden-f78800142855
 set hidden
 
 set showmode
@@ -75,8 +77,26 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
+""Better explorer""
+" Netrw setup
+let g:netrw_liststyle = 3 " change style pressing i
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+" uncomment to open netrw on startup 
+"let g:netrw_browse_split = 4
+"let g:netrw_altv = 1
+"let g:netrw_winsize = 20
+"augroup ProjectDrawer
+"      autocmd!
+"        autocmd VimEnter * :Vexplore
+"    augroup END
+
+
 " Map Y to copy row content from cursor to EOL
 map Y y$
+
+" Use system clipboard by default 
+set clipboard=unnamed 
 
 " Open and swithc between tabs
 nnoremap <C -S-tab> :tabprevious<CR>
@@ -88,3 +108,32 @@ nnoremap <C -t> <ESC>:tabnew<CR>
 
 " Map \s to replace each word under cursor
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+
+" Install vim-plug plugin manager if one doesn't exist
+if empty(glob('~/.vim/autoload/plug.vim'))
+      silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+          \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    endif
+
+" Vim-plug installed plugins
+call plug#begin('~/.vim/plugged')
+
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+call plug#end()
+
+
+
+"" PLUGIN SPECIFIC SETTINGS
+" Airline
+let g:airline_theme = 'minimalist'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#branch#enabled = 1
+if !exists('g:airline_symbols')
+      let g:airline_symbols = {}
+  endif
+  let g:airline_symbols.space = "\ua0"
